@@ -28,3 +28,44 @@ or
 
 ### Components
 
+- The template must contain one root element !
+
+**OK**
+
+```js
+  `
+  <div>
+    <p>Some text</p>
+  </div>
+  `
+```
+
+**KO**
+
+```js
+  `
+  <div>
+    <p>Some text</p>
+  </div>
+  <div>
+    <p>Some text</p>
+  </div>
+  `
+```
+
+- The `data` of a component must be a function.
+- To pass on from the Vue root object to a component, you must specify the `props`.
+  - **Recommandation:** define the specification of the each prop object.
+  
+  ```js
+  props: {
+    premium: {
+      type: Boolean,
+      required: true
+    }
+  }
+  ```
+  
+  ### Events
+  
+  - You must name the event in kebad case: `my-event` (see [doc](https://fr.vuejs.org/v2/guide/components-custom-events.html)).
